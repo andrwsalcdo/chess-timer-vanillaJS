@@ -15,6 +15,9 @@
         going: 0 
     }
 
+    // ID value for setTimeout, in order to stop at 0:00
+    let clear; 
+
     /* function for onClick events. 
         Starts and Pauses the timers. 
         args: 
@@ -41,15 +44,18 @@
     */
     function decrement(player) {
         if(player.going == 1) {
-            setTimeout(() => {
+        clear = setTimeout(() => {
                 //sec count down
                 player.sec--; 
                 //display the time on the page
                 player.timer.innerHTML = displayTime(player);                 
                 //continue decrementing the timer
                 decrement(player); 
+                // (player.sec > 0) ? decrement(player) : clearTimeout( decrement(player) );  
+                // stop(player);         
             }, 1000)
         } 
+        GameOver(player); 
     }
 
     // figures out the time to display on the page
@@ -61,6 +67,13 @@
        return (secs >= 10) ? mins+':'+secs : mins+':0'+secs; 
     }
 
+
+    function GameOver(player) {
+        if (player.sec < 0) {
+            clearTimeout( clear ); 
+            alert('You lost! Refresh the page to play again!'); 
+        }
+    }
 
    
    
