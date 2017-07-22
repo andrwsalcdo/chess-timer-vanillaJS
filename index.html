@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chess timer</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="nav" class="navbar navbar-default nav">
+        <h1>Chess Timer</h1>
+    </nav>
+    <div class="container text-center">
+        <div class="row">
+            <div id="player-1"class="col-sm-5">
+                <button id="player1" onclick="stopGo(playerOne, playerTwo)"> Player 1</button>
+                <div id="timer1">4:00</div>
+            </div>
+            <div class="col-sm-2"></div>
+            <div id="player-2" class="col-sm-5">
+                <button id="player2" onclick="stopGo(playerTwo, playerOne)">Player 2</button>
+                <div id="timer2">4:00</div>        
+            </div>
+        </div>
+    </div>
+
+
+<script src="main.js"></script>
+</body>
+</html>
